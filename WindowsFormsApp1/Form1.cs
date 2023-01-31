@@ -35,14 +35,14 @@ namespace GestionBancariaAppNS
                 return ERR_CANTIDAD_NO_VALIDA;
             if (saldo < cantidad)
                 return ERR_SALDO_INSUFICIENTE;
-            saldo += cantidad;
+            saldo -= cantidad; //ruth-ia
             return 0;
         }
 
-        public int RealizarIngreso(double cantidad) {
-            if (cantidad > 0)
+        public int RealizarIngreso(double cantidad) { //ruth-ia
+            if (cantidad <= 0)
                 return ERR_CANTIDAD_NO_VALIDA;
-            saldo -= cantidad;
+            saldo += cantidad;
             return 0;
         }
 
